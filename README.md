@@ -116,7 +116,7 @@ Heuristic energy decays and flattens, confirming convergence.
 
 - Mean $\theta \approx 0.8962$, $\text{std}(\theta) < 0.01$  
 - Observed frequency $\approx 0.1482$ Hz  
-- Damped theoretical frequency $\approx 0.1506$ Hz (based on $\sqrt{0.8962 - \frac{0.05^2}{4}} / (2\pi)$)  
+- Damped theoretical frequency $\approx 0.1506$ Hz based on $\sqrt{0.8962 - \frac{0.05^2}{4}} / (2\pi)$  
 - Phase space: smooth inward spiral toward a stable limit cycle  
 
 *Adjust `epsilon_success` in code to explore different slow adaptation rates.*
@@ -215,5 +215,3 @@ $$\lambda_{1,2} = \frac{-\delta \pm \sqrt{\delta^2 - 4\theta^*}}{2}, \quad \lamb
 - **Slow adaptation ($\epsilon$ small)** → stable self-regulation.  
 - **Fast adaptation ($\epsilon$ large)** → oscillatory divergence.  
 - Higher $\theta_0$ (e.g., 2.0) requires increased $\gamma$ (e.g., 0.1) to stabilize slow adaptation by reducing $\theta$ variability.
-
-This file focuses on **magnetostrictive noise**, with load noise being represented implicitly through the 100 Hz component. The harmonic structure in this example includes only **odd harmonics 300 Hz, 500 Hz, 700 Hz** for simplicity.
