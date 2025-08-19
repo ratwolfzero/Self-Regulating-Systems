@@ -59,6 +59,8 @@ $$f_d = \frac{\sqrt{\theta_{\text{mean}} - \frac{\delta^2}{4}}}{2\pi}$$
 
 This is reported alongside the observed frequency to validate the simulation’s physical behavior.
 
+![Header Image](./Documentation/Figure_3.png)
+
 ## Why?
 
 The simulation demonstrates a key principle of adaptive systems: **adaptation rate is critical for stability.**
@@ -140,6 +142,9 @@ Heuristic energy decays and flattens, confirming convergence.
 - Phase space: sustained wide loops, no contraction toward equilibrium  
 
 *The console reports single mean values for (theta) and frequency, but plots show oscillatory behavior due to non-convergence. Adjust epsilon_fail to test different fast adaptation rates.*
+
+![Header Image](./Documentation/Figure_1.png)
+![Header Image](./Documentation/Figure_2.png)
 
 ---
 
