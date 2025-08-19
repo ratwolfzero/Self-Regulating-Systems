@@ -9,7 +9,7 @@ CONFIG = {
         'delta': 0.05,
         'a': 0.5,
         'gamma': 0.05,
-        'theta0': 2.0,
+        'theta0': 1.0,
         'epsilon_success': 0.01,
         'epsilon_fail': 0.5,
         't_span': (0, 100),
