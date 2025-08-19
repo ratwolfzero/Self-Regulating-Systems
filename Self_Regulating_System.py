@@ -24,29 +24,6 @@ start_time = 60.0      # analysis window start (s)
 end_time = 80.0      # analysis window end (s)
 theta_tol = 0.01      # threshold for success criterion
 
-# ----------------------
-# ODE Definition                                                                                       import numpy as np
-
-# ----------------------
-# System Parameters
-# ----------------------
-delta = 0.05        # damping coefficient
-a = 0.5             # target squared amplitude
-gamma = 0.05        # relaxation rate for theta
-theta0 = 1.0        # baseline natural frequency squared
-
-epsilon_success = 0.01   # slow adaptation
-epsilon_fail = 0.5       # fast adaptation
-
-t = np.linspace(0, 100, 500)      # time array
-x0 = [1.0, 0.0, 0.5]              # initial conditions [x, v, theta]
-
-# ----------------------
-# Analysis Parameters
-# ----------------------
-start_time = 60.0      # analysis window start (s)
-end_time = 80.0      # analysis window end (s)
-theta_tol = 0.01      # threshold for success criterion
 
 # ----------------------
 # ODE Definition
