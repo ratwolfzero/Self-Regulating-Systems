@@ -288,7 +288,7 @@ def plot_metrics_bar(result_s: SimulationResult, result_f: SimulationResult) -> 
 # Main Execution
 # ----------------------
 if __name__ == "__main__":
-    # Parameter Definitions (all in one place for clarity)
+    # Parameter Definitions
     # System Parameters
     delta = 0.05        # Damping coefficient
     a = 0.5             # Target squared amplitude
