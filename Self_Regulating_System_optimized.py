@@ -23,7 +23,7 @@ class SystemConfig:
     t_span: Tuple[float, float] = (0, 100)
     num_points: int = 500
     x0: List[float] = field(default_factory=lambda: [
-                            1.0, 0.0, 0.5])  # Use default_factory
+                            1.0, 0.0, 0.5])
 
 
 @dataclass
