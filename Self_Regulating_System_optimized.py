@@ -302,7 +302,7 @@ if __name__ == "__main__":
     
     # Simulation Parameters
     t = np.linspace(0, 100, 500)  # Time array
-    x0 = [1.0, 0.0, 0.5]         # Initial conditions [position, velocity, theta]
+    x0 = [1.0, 0.0, 0.5]          # Initial conditions [position, velocity, theta]
     epsilons = {                  # Adaptation rates
         'success': 0.01,          # Slow adaptation
         'fail': 0.5               # Fast adaptation
