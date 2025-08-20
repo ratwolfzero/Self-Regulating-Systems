@@ -257,7 +257,7 @@ def plot_instantaneous_frequency(t: np.ndarray, result_s: SimulationResult, resu
     plt.show()
 
 def plot_metrics_bar(result_s: SimulationResult, result_f: SimulationResult) -> None:
-    """Plot a bar chart comparing simulation metrics.
+    """Plot an enhanced grouped bar chart with annotations and a summary table comparing simulation metrics.
 
     Args:
         result_s: Simulation result for success case.
@@ -270,17 +270,50 @@ def plot_metrics_bar(result_s: SimulationResult, result_f: SimulationResult) -> 
     x = np.arange(len(metrics))
     width = 0.35
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.bar(x - width/2, values_s, width, label=f'Success (ε={result_s.epsilon:.4f})',
-           color='green' if result_s.status == "Success" else 'red')
-    ax.bar(x + width/2, values_f, width, label=f'Fail (ε={result_f.epsilon:.4f})',
-           color='blue' if result_f.status == "Success" else 'orange')
-    ax.set_xlabel('Metric')
-    ax.set_ylabel('Value')
-    ax.set_title('Simulation Metrics Comparison')
+    
+    # Plot bars
+    bars_s = ax.bar(x - width/2, values_s, width, label=f'Success (ε={result_s.epsilon:.4f})',
+                    color='forestgreen' if result_s.status == "Success" else 'lightcoral')
+    bars_f = ax.bar(x + width/2, values_f, width, label=f'Fail (ε={result_f.epsilon:.4f})',
+                    color='royalblue' if result_f.status == "Success" else 'darkorange')
+    
+    # Add annotations on top of bars
+    for bar in bars_s:
+        height = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}',
+                ha='center', va='bottom', fontsize=9)
+    for bar in bars_f:
+        height = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width()/2, height, f'{height:.4f}',
+                ha='center', va='bottom', fontsize=9)
+    
+    # Set labels and title
+    ax.set_xlabel('Metrics')
+    ax.set_ylabel('Values')
+    ax.set_title('Comparison of Simulation Metrics (Success vs Fail)')
     ax.set_xticks(x)
-    ax.set_xticklabels(metrics)
+    ax.set_xticklabels(metrics, rotation=0)
     ax.legend()
-    ax.grid(True, axis='y')
+    ax.grid(True, axis='y', linestyle='--', alpha=0.7)
+    
+    # Adjust y-axis limit to accommodate annotations
+    max_height = max(max(values_s), max(values_f))
+    ax.set_ylim(0, max_height * 1.2)
+    
+    # Add a summary table below the plot
+    table_data = [
+        ['Metric', 'Success (ε=0.0100)', 'Fail (ε=0.5000)'],
+        ['Mean Theta', f'{result_s.mean_theta:.4f}', f'{result_f.mean_theta:.4f}'],
+        ['Std Theta', f'{result_s.std_theta:.4f}', f'{result_f.std_theta:.4f}'],
+        ['Mean Freq', f'{result_s.mean_freq:.4f}', f'{result_f.mean_freq:.4f}'],
+        ['Damped Freq', f'{result_s.damped_freq:.4f}', f'{result_f.damped_freq:.4f}']
+    ]
+    table = ax.table(cellText=table_data, loc='bottom', cellLoc='center', bbox=[0, -0.9, 1, 0.5])
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    
+    # Adjust layout to prevent overlap
+    plt.subplots_adjust(bottom=0.4)
     plt.tight_layout()
     plt.show()
 
