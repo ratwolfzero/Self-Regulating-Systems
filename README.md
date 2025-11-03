@@ -171,7 +171,7 @@ $$x^* = 0, \quad v^* = 0$$
 
 From $\theta$-dynamics:
 
-$$\epsilon \big( (x^*)^2 - a \big) - \gamma (\theta^* - \theta_0) = 0$$
+$$\epsilon \left( (x_i)^2 - a \right) - \gamma (\theta_j - \theta_0) = 0$$
 
 So:
 
