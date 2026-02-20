@@ -72,17 +72,17 @@ The simulation demonstrates a key principle of adaptive systems: **adaptation ra
 
 ## Explanation of Parameters
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| $\delta$ | 0.05 | Damping coefficient controlling energy loss |
-| $a$ | 0.5 | Target amplitude squared for $x$ |
-| $\gamma$ | 0.05 | Regularization strength pulling $\theta$ toward $\theta_0$ |
-| $\theta_0$ | 1.0 | Baseline reference for $\theta$ (natural frequency squared) |
-| $\epsilon$ | 0.01 (success), 0.5 (fail) | Adaptation rate |
-| $t$ | 0–100, 500 points | Time array for simulation |
-| Initial conditions | $x=1.0$, $v=0.0$, $\theta=0.5$ | Starting state |
-| Analysis window | 60–80 s | Time window for steady-state analysis |
-| $\theta_{\text{tol}}$ | 0.01 | Threshold for $\theta$ stability (success if $\text{std}(\theta) < 0.01$) |
+| Parameter             | Value                          | Description                                                               |
+| --------------------- | ------------------------------ | ------------------------------------------------------------------------- |
+| $\delta$              | 0.05                           | Damping coefficient controlling energy loss                               |
+| $a$                   | 0.5                            | Target amplitude squared for $x$                                          |
+| $\gamma$              | 0.05                           | Regularization strength pulling $\theta$ toward $\theta_0$                |
+| $\theta_0$            | 1.0                            | Baseline reference for $\theta$ (natural frequency squared)               |
+| $\epsilon$            | 0.01 (success), 0.5 (fail)     | Adaptation rate                                                           |
+| $t$                   | 0–100, 500 points              | Time array for simulation                                                 |
+| Initial conditions    | $x=1.0$, $v=0.0$, $\theta=0.5$ | Starting state                                                            |
+| Analysis window       | 60–80 s                        | Time window for steady-state analysis                                     |
+| $\theta_{\text{tol}}$ | 0.01                           | Threshold for $\theta$ stability (success if $\text{std}(\theta) < 0.01$) |
 
 For higher $\theta_0$ (e.g., 2.0), $\gamma = 0.1$ stabilizes slow adaptation by reducing $\theta$ fluctuations.
 
